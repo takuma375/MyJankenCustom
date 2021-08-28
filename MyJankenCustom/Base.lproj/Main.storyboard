@@ -34,6 +34,9 @@
                                             <constraint firstAttribute="width" secondItem="5FL-Ux-iLt" secondAttribute="height" multiplier="1:1" id="Zjm-OF-0sf"/>
                                         </constraints>
                                         <state key="normal" title="choki" image="choki"/>
+                                        <connections>
+                                            <action selector="playerHandsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Azi-d1-Ddo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ew-a0-bnh">
                                         <rect key="frame" x="290" y="0.0" width="100" height="100"/>
@@ -41,6 +44,9 @@
                                             <constraint firstAttribute="width" secondItem="0Ew-a0-bnh" secondAttribute="height" multiplier="1:1" id="QIa-SC-gZ0"/>
                                         </constraints>
                                         <state key="normal" title="pa" image="pa"/>
+                                        <connections>
+                                            <action selector="playerHandsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qjy-Bb-4Nk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
