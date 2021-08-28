@@ -23,7 +23,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Wcq-v3-loH" secondAttribute="height" multiplier="1:1" id="ZCl-fv-Hf8"/>
                                         </constraints>
-                                        <state key="normal" title="gu" image="gu"/>
+                                        <state key="normal" title="0" image="gu"/>
                                         <connections>
                                             <action selector="playerHandsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hvt-dU-BwW"/>
                                         </connections>
@@ -33,7 +33,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5FL-Ux-iLt" secondAttribute="height" multiplier="1:1" id="Zjm-OF-0sf"/>
                                         </constraints>
-                                        <state key="normal" title="choki" image="choki"/>
+                                        <state key="normal" title="1" image="choki"/>
                                         <connections>
                                             <action selector="playerHandsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Azi-d1-Ddo"/>
                                         </connections>
@@ -43,7 +43,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="0Ew-a0-bnh" secondAttribute="height" multiplier="1:1" id="QIa-SC-gZ0"/>
                                         </constraints>
-                                        <state key="normal" title="pa" image="pa"/>
+                                        <state key="normal" title="2" image="pa"/>
                                         <connections>
                                             <action selector="playerHandsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qjy-Bb-4Nk"/>
                                         </connections>
