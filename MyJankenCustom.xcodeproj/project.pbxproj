@@ -24,6 +24,7 @@
 		F18C77C426DA2DA200A7190D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F18C77C726DA2DA200A7190D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F18C77C926DA2DA200A7190D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F18C77CF26DA995A00A7190D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 		F18C77AF26DA2DA000A7190D = {
 			isa = PBXGroup;
 			children = (
+				F18C77CF26DA995A00A7190D /* README.md */,
 				F18C77BA26DA2DA100A7190D /* MyJankenCustom */,
 				F18C77B926DA2DA100A7190D /* Products */,
 			);
