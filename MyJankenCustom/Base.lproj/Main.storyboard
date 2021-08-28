@@ -18,33 +18,36 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3g8-qr-kS0">
                                 <rect key="frame" x="0.0" y="710" width="390" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcq-v3-loH">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcq-v3-loH">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Wcq-v3-loH" secondAttribute="height" multiplier="1:1" id="ZCl-fv-Hf8"/>
                                         </constraints>
-                                        <state key="normal" title="グー"/>
+                                        <state key="normal" title="gu" image="gu"/>
+                                        <connections>
+                                            <action selector="playerHandsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hvt-dU-BwW"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FL-Ux-iLt">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FL-Ux-iLt">
                                         <rect key="frame" x="145" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5FL-Ux-iLt" secondAttribute="height" multiplier="1:1" id="Zjm-OF-0sf"/>
                                         </constraints>
-                                        <state key="normal" title="チョキ"/>
+                                        <state key="normal" title="choki" image="choki"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ew-a0-bnh">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ew-a0-bnh">
                                         <rect key="frame" x="290" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="0Ew-a0-bnh" secondAttribute="height" multiplier="1:1" id="QIa-SC-gZ0"/>
                                         </constraints>
-                                        <state key="normal" title="パー"/>
+                                        <state key="normal" title="pa" image="pa"/>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="dH1-72-fNt"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2o-V9-cHc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="これからじゃんけんをします！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2o-V9-cHc">
                                 <rect key="frame" x="0.0" y="44" width="390" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="jGE-8u-oHZ"/>
@@ -56,7 +59,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lub-FQ-3iC">
                                 <rect key="frame" x="0.0" y="84" width="390" height="586"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9u-6t-but">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="どの手を出しますか?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9u-6t-but">
                                 <rect key="frame" x="0.0" y="670" width="390" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="z0h-Ny-qWa"/>
@@ -84,10 +87,23 @@
                             <constraint firstItem="3g8-qr-kS0" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pCA-bg-fLX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playerHandLabel" destination="u9u-6t-but" id="r4A-rr-CTX"/>
+                        <outlet property="resultLabel" destination="R2o-V9-cHc" id="MYe-yS-Trm"/>
+                        <outlet property="systemHandImage" destination="Lub-FQ-3iC" id="aB4-l3-han"/>
+                        <outletCollection property="playerHandsButton" destination="Wcq-v3-loH" collectionClass="NSMutableArray" id="QbH-2a-AJy"/>
+                        <outletCollection property="playerHandsButton" destination="5FL-Ux-iLt" collectionClass="NSMutableArray" id="655-OB-ACV"/>
+                        <outletCollection property="playerHandsButton" destination="0Ew-a0-bnh" collectionClass="NSMutableArray" id="LkM-vy-g8O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="122" y="114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="choki" width="804" height="1094"/>
+        <image name="gu" width="669" height="706"/>
+        <image name="pa" width="669" height="1069"/>
+    </resources>
 </document>
