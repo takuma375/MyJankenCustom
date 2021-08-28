@@ -28,6 +28,37 @@ class ViewController: UIViewController {
             newSystemHandNumber = Int.random(in: 0..<3)
         } while systemHandNumber == newSystemHandNumber
         systemHandNumber = newSystemHandNumber
+        
+        // プレイヤーの出した手を取得する処理
+        guard let playerHandString = sender.titleLabel?.text else {
+            return
+        }
+        let playerHandNumber = Int(playerHandString)!
+        let playerHandName = handNumberToHandName(handNumber: playerHandNumber)
+        
+        let systemHandImageName = handNumberToHandImageName(handNumber: systemHandNumber)
+        
+        // 勝敗判定と上部ラベルの更新処理
+        if systemHandNumber == playerHandNumber {
+            resultLabel.text = "引き分けです。惜しい...！"
+        } else {
+            if systemHandNumber == 0 && playerHandNumber == 1 {
+                resultLabel.text = "負けです...残念！"
+            } else if systemHandNumber == 0 && playerHandNumber == 2 {
+                resultLabel.text = "勝ちました！やったね！"
+            } else if systemHandNumber == 1 && playerHandNumber == 0 {
+                resultLabel.text = "勝ちました！やったね！"
+            } else if systemHandNumber == 1 && playerHandNumber == 2 {
+                resultLabel.text = "負けです...残念！"
+            } else if systemHandNumber == 2 && playerHandNumber == 0 {
+                resultLabel.text = "負けです...残念！"
+            } else if systemHandNumber == 2 && playerHandNumber == 1 {
+                resultLabel.text = "勝ちました！やったね！"
+            }
+        }
+        // 画像と下部ラベルの更新処理
+        systemHandImage.image = UIImage(named: systemHandImageName)
+        playerHandLabel.text = "\(playerHandName)を出しました"
     }
     
     // 手の数字から、手の画像名を取得する関数
