@@ -34,8 +34,13 @@ class ViewController: UIViewController {
             return
         }
         let playerHandNumber = Int(playerHandString)!
-        let playerHandName = handNumberToHandName(handNumber: playerHandNumber)
         
+        updateUI(systemHandNumber: systemHandNumber, playerHandNumber: playerHandNumber)
+    }
+    
+    // UIの更新処理
+    func updateUI(systemHandNumber: Int, playerHandNumber: Int) {
+        let playerHandName = handNumberToHandName(handNumber: playerHandNumber)
         let systemHandImageName = handNumberToHandImageName(handNumber: systemHandNumber)
         
         // 勝敗判定と上部ラベルの更新処理
