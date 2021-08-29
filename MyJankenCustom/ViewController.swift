@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var totalScoreLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var systemHandImage: UIImageView!
     @IBOutlet weak var playerHandLabel: UILabel!
@@ -42,6 +43,7 @@ class ViewController: UIViewController {
         resultLabel.text = janken.generateResultLabelText()
         systemHandImage.image = UIImage(named: janken.handNumberToImageName())
         playerHandLabel.text = "\(janken.handNumberToHandName())を出しました"
+        totalScoreLabel.text = janken.getTotalGameResults()
     }
     
     
