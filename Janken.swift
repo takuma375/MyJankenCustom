@@ -11,6 +11,18 @@ struct Janken {
     var systemHandNumber: Int
     var playerHandNumber: Int
     
+    // システムの新たな手を生成するメソッド
+    mutating func getNextSystemHand() {
+        var newSystemHandNumber: Int
+        
+        // システムの出す手をランダムに生成
+        repeat {
+            newSystemHandNumber = Int.random(in: 0..<3)
+        } while newSystemHandNumber == self.systemHandNumber
+        
+        self.systemHandNumber = newSystemHandNumber
+    }
+    
     // 勝敗判定と試合結果を伝えるラベルのテキストを生成するメソッド
     func generateResultLabelText() -> String {
         var resultLabel = ""
