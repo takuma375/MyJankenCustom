@@ -10,6 +10,9 @@ import Foundation
 struct Janken {
     var systemHandNumber: Int
     var playerHandNumber: Int
+    var totalWins: Int = 0
+    var totalLoses: Int = 0
+    var totalDraws: Int = 0
     
     // システムの新たな手を生成するメソッド
     mutating func getNextSystemHand() {
@@ -24,27 +27,50 @@ struct Janken {
     }
     
     // 勝敗判定と試合結果を伝えるラベルのテキストを生成するメソッド
-    func generateResultLabelText() -> String {
+    mutating func generateResultLabelText() -> String {
         var resultLabel = ""
         
         if self.systemHandNumber == self.playerHandNumber {
             resultLabel = "引き分けです。惜しい...！"
+            countUpStatus(status: .draw)
         } else {
             if self.systemHandNumber == 0 && self.playerHandNumber == 1 {
                 resultLabel = "負けです...残念！"
+                countUpStatus(status: .lose)
             } else if self.systemHandNumber == 0 && self.playerHandNumber == 2 {
                 resultLabel = "勝ちました！やったね！"
+                countUpStatus(status: .win)
             } else if self.systemHandNumber == 1 && self.playerHandNumber == 0 {
                 resultLabel = "勝ちました！やったね！"
+                countUpStatus(status: .win)
             } else if self.systemHandNumber == 1 && self.playerHandNumber == 2 {
                 resultLabel = "負けです...残念！"
+                countUpStatus(status: .lose)
             } else if self.systemHandNumber == 2 && self.playerHandNumber == 0 {
                 resultLabel = "負けです...残念！"
+                countUpStatus(status: .lose)
             } else if self.systemHandNumber == 2 && self.playerHandNumber == 1 {
                 resultLabel = "勝ちました！やったね！"
+                countUpStatus(status: .win)
             }
         }
         return resultLabel
+    }
+    
+    // 累計勝ち、負け、引き分け回数のラベルテキストを生成するメソッド
+    func getTotalGameResults() -> String {
+        return "Win: \(totalWins) Lose: \(totalLoses) Draw: \(totalDraws)"
+    }
+    
+    // 勝ち、負け、引き分けの回数を変更するメソッド
+    mutating func countUpStatus(status: ResultPattern) {
+        if status == .win {
+            totalWins += 1
+        } else if status == .draw {
+            totalDraws += 1
+        } else if status == .lose {
+            totalLoses += 1
+        }
     }
     
     // 手の数字から、手の画像名を取得するメソッド
@@ -71,5 +97,12 @@ struct Janken {
             handName = "パー"
         }
         return handName
+    }
+    
+    // 勝ち、負け、引き分けのパターンを定義
+    enum ResultPattern {
+        case win
+        case lose
+        case draw
     }
 }
